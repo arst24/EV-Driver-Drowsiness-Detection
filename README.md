@@ -61,6 +61,32 @@ This is an educational prototype, not a certified automotive safety device. It c
 
 **Mohak Yashpal Lohi (ARST)**
 
+## 📸 Project Gallery
+
+### 1. Hardware Setup
+![Hardware Setup](docs/images/hardware-setup.jpg)
+
+### 2. System Ready
+![System Ready](docs/images/sys%20ready%20hardware.jpg)
+
+### 3. Driver Awake — Python Detection
+![Driver Awake](docs/images/py%20awake.png)
+
+### 4. Drowsiness Detected — Python
+![Drowsiness Detected](docs/images/py%20drowsy.png)
+
+### 5. Driver Awake — Hardware Display
+![Awake Hardware](docs/images/awake%20hardware.jpg)
+
+### 6. Drowsiness Warning — Hardware Display
+![Drowsy Hardware](docs/images/drowsy%20hardware.jpg)
+
+### 7. Face Not Detected — Python
+![Face Not Detected](docs/images/py%20no%20face.png)
+
+### 8. Face Not Detected — Hardware
+![Face Not Detected Hardware](docs/images/face%20not%20found%20hardware.jpg)
+
 ## © Copyright
 
 Copyright © 2026. All rights reserved.
