@@ -132,6 +132,58 @@ The system combines Python-based AI vision processing with an Arduino-controlled
 
 **Note:** The AI vision processing runs on the laptop. The Arduino handles the LCD and voice-warning hardware.
 
+## 🔌 Hardware Components
+
+| Component | Purpose |
+|---|---|
+| Arduino Mega 2560 | Controls the LCD and voice-warning module |
+| Laptop webcam | Captures the driver's face |
+| 16×2 LCD | Displays system status and warnings |
+| ISD1820 voice module | Plays the pre-recorded warning message |
+| 8Ω / 16Ω speaker | Outputs the voice warning |
+| Breadboard and jumper wires | Provide circuit connections |
+| Laptop / PC | Runs Python and AI vision processing |
+| USB cable | Powers the Arduino and enables serial communication |
+
+## 🔗 Hardware Connections
+
+### 16×2 LCD to Arduino Mega 2560
+
+| LCD Pin | Arduino Connection |
+|---|---|
+| RS | Digital pin 7 |
+| E | Digital pin 6 |
+| D4 | Digital pin 5 |
+| D5 | Digital pin 4 |
+| D6 | Digital pin 3 |
+| D7 | Digital pin 2 |
+| VSS | GND |
+| VDD | 5V |
+| RW | GND |
+| VO | GND for temporary contrast setup |
+
+### ISD1820 Voice Module
+
+| ISD1820 Pin | Connection |
+|---|---|
+| VCC | 5V |
+| GND | GND |
+| Playback trigger input | Arduino digital pin 8 |
+| SP+ / SP− | Speaker terminals |
+
+**Important:** Use a common ground between the Arduino and voice module. Connect the speaker only to the ISD1820 speaker terminals, never directly to Arduino pins.
+
+## 💻 Software and Communication
+
+- **Python:** Main detection program
+- **OpenCV:** Webcam and video processing
+- **MediaPipe:** Facial landmark detection
+- **pySerial:** Sends status messages to the Arduino
+- **Arduino IDE:** Uploads the hardware-control sketch
+- **Serial communication:** COM3 at 9600 baud in the tested setup
+
+*Note: The speaker impedance should match the module's supported specifications. A 16Ω speaker may produce lower volume than an 8Ω speaker.*
+
 ## © Copyright
 
 Copyright © 2026. All rights reserved.
