@@ -87,6 +87,51 @@ This is an educational prototype, not a certified automotive safety device. It c
 ### 8. Face Not Detected — Hardware
 ![Face Not Detected Hardware](docs/images/face%20not%20found%20hardware.jpg)
 
+
+## ⚙️ System Architecture
+
+The system combines Python-based AI vision processing with an Arduino-controlled warning system.
+
+```text
+          LAPTOP WEBCAM
+                |
+                v
+       PYTHON + OPENCV
+                |
+                v
+    MEDIAPIPE FACE LANDMARKS
+                |
+                v
+       EYE ASPECT RATIO
+                |
+                v
+     DROWSINESS DETECTION
+                |
+        USB SERIAL (COM3)
+                |
+                v
+       ARDUINO MEGA 2560
+          /           \
+         v             v
+     16×2 LCD      ISD1820 MODULE
+   AWAKE/DROWSY      + SPEAKER
+                         |
+                         v
+                  VOICE WARNING
+```
+
+### How It Works
+
+1. The laptop webcam captures the driver's face.
+2. Python processes the video using OpenCV and MediaPipe.
+3. Eye landmarks are used to calculate the Eye Aspect Ratio (EAR).
+4. If the eyes remain closed for approximately 2 seconds, the system detects possible drowsiness.
+5. Python sends the detection status to the Arduino Mega through serial communication.
+6. The Arduino updates the LCD and triggers the ISD1820 module to play the recorded voice warning.
+7. When the eyes reopen, the system returns to the awake state.
+
+**Note:** The AI vision processing runs on the laptop. The Arduino handles the LCD and voice-warning hardware.
+
 ## © Copyright
 
 Copyright © 2026. All rights reserved.
