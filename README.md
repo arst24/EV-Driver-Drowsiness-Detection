@@ -184,6 +184,88 @@ The system combines Python-based AI vision processing with an Arduino-controlled
 
 *Note: The speaker impedance should match the module's supported specifications. A 16Ω speaker may produce lower volume than an 8Ω speaker.*
 
+## 🚀 Installation and Setup
+
+### 1. Requirements
+
+- Python 3.13
+- Arduino Mega 2560
+- Laptop webcam
+- 16×2 LCD
+- ISD1820 voice playback module and speaker
+- Arduino IDE
+
+### 2. Install Python Libraries
+
+Open Command Prompt in your project folder and run:
+
+```bash
+python -m pip install opencv-python mediapipe pyserial
+```
+
+### 3. Connect the Hardware
+
+Connect the LCD and ISD1820 module according to the hardware connections documented above. Connect the Arduino Mega to the laptop using a USB cable.
+
+### 4. Upload the Arduino Program
+
+1. Open the Arduino sketch in Arduino IDE.
+2. Select **Arduino Mega or Mega 2560** as the board.
+3. Select the correct COM port.
+4. Upload the sketch.
+5. Close the Arduino Serial Monitor before running the Python program.
+
+### 5. Configure the Python Program
+
+Ensure that the following files are in the correct locations:
+
+- `ev_drowsiness_system.py`
+- `face_landmarker.task`
+
+Check that the serial port in the Python code matches your Arduino's COM port. The tested configuration used `COM3` at `9600` baud.
+
+### 6. Run the System
+
+Run the Python program from Command Prompt:
+
+```bash
+python ev_drowsiness_system.py
+```
+
+Allow webcam access when prompted. Keep your face visible to the camera and test the awake and drowsiness-warning states in a safe, stationary setup.
+
+### ⚠️ Important Notes
+
+- The Arduino sketch must be uploaded before starting the Python program.
+- The `face_landmarker.task` model file must be available at the path specified in the Python script.
+- COM port names may differ between computers.
+- This is an educational prototype, not a certified automotive safety system.
+
+## ⚠️ Limitations
+
+- The system requires a laptop or PC to process webcam video and run the detection model.
+- Detection accuracy can be affected by poor lighting, camera angle, glasses, or face movement.
+- Eye closure is used as an indicator of possible drowsiness; it does not medically confirm that a driver is sleepy.
+- The prototype has not been certified or tested for real-world vehicle safety.
+- The recorded voice warning depends on the ISD1820 module, speaker, and power supply.
+
+## 🔮 Future Improvements
+
+- Integrate a compact camera and embedded AI processor.
+- Improve detection under different lighting conditions.
+- Add head-pose and yawning detection.
+- Include a mobile notification or dashboard alert.
+- Improve warning audio clarity and volume.
+- Test the system across more users and driving-like conditions in a controlled environment.
+
+## 🏁 Conclusion
+
+This project demonstrates a low-cost driver drowsiness warning prototype using computer vision, facial landmarks, an Arduino Mega, an LCD, and a voice playback module. It combines software-based detection with physical alerts to demonstrate how technology can help identify signs of driver fatigue.
+
+## 👨‍💻 Author
+
+Developed as an educational project.
+
 ## © Copyright
 
 Copyright © 2026. All rights reserved.
