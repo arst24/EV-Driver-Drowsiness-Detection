@@ -262,6 +262,30 @@ Allow webcam access when prompted. Keep your face visible to the camera and test
 
 This project demonstrates a low-cost driver drowsiness warning prototype using computer vision, facial landmarks, an Arduino Mega, an LCD, and a voice playback module. It combines software-based detection with physical alerts to demonstrate how technology can help identify signs of driver fatigue.
 
+## 📁 Repository Structure
+
+```text
+EV-Driver-Drowsiness-Detection/
+├── docs/
+│   └── images/
+├── README.md
+├── .gitignore
+├── requirements.txt
+├── ev_drowsiness_system.py
+├── ev_drowsiness_arduino.ino
+├── face_landmarker.task
+├── camera_test.py
+└── eye_test.py
+```
+
+- `ev_drowsiness_system.py` — Main Python-based drowsiness detection program.
+- `ev_drowsiness_arduino.ino` — Arduino sketch for LCD and voice-warning control.
+- `face_landmarker.task` — Pretrained MediaPipe face landmark model.
+- `camera_test.py` — Webcam testing utility.
+- `eye_test.py` — Eye detection testing utility.
+- `requirements.txt` — Python dependencies.
+- `docs/images/` — Project photos and screenshots.
+
 ## 👨‍💻 Author
 
 Developed as an educational project.
