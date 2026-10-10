@@ -2,6 +2,10 @@
 
 An AI-assisted driver safety system that detects signs of drowsiness using a laptop webcam and alerts the driver through an LCD display and a voice warning module.
 
+![Latest Release](https://img.shields.io/github/v/release/arst24/EV-Driver-Drowsiness-Detection?label=Latest%20Release)
+
+[View Releases](https://github.com/arst24/EV-Driver-Drowsiness-Detection/releases)
+
 ## 📌 Project Overview
 
 Driver drowsiness can reduce reaction time and increase the risk of road accidents. This project combines Python-based facial landmark detection with an Arduino-controlled warning system to demonstrate a low-cost driver alert solution.
